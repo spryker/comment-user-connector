@@ -14,7 +14,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
 /**
  * @method \Spryker\Zed\CommentUserConnector\CommentUserConnectorConfig getConfig()
  * @method \Spryker\Zed\CommentUserConnector\Persistence\CommentUserConnectorRepositoryInterface getRepository()
- * @method \Spryker\Zed\CommentUserConnector\Persistence\CommentUserConnectorEntityManagerInterface getEntityManager()
  */
 class CommentUserConnectorPersistenceFactory extends AbstractPersistenceFactory
 {

@@ -20,7 +20,7 @@ interface UserReaderInterface
     public function findUserById(int $idUser): ?UserTransfer;
 
     /**
-     * @param list<int> $userIds
+     * @param array<int> $userIds
      *
      * @return \Generated\Shared\Transfer\UserCollectionTransfer
      */
