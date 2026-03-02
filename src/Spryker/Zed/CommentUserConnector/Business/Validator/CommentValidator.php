@@ -40,10 +40,6 @@ class CommentValidator implements CommentValidatorInterface
      */
     protected CommentUserConnectorRepositoryInterface $commentUserConnectorRepository;
 
-    /**
-     * @param \Spryker\Zed\CommentUserConnector\Business\Reader\UserReaderInterface $userReader
-     * @param \Spryker\Zed\CommentUserConnector\Persistence\CommentUserConnectorRepositoryInterface $commentUserConnectorRepository
-     */
     public function __construct(
         UserReaderInterface $userReader,
         CommentUserConnectorRepositoryInterface $commentUserConnectorRepository
@@ -52,11 +48,6 @@ class CommentValidator implements CommentValidatorInterface
         $this->commentUserConnectorRepository = $commentUserConnectorRepository;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CommentRequestTransfer $commentRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CommentValidationResponseTransfer
-     */
     public function validateCommentAuthor(CommentRequestTransfer $commentRequestTransfer): CommentValidationResponseTransfer
     {
         $commentValidationResponseTransfer = (new CommentValidationResponseTransfer())->setIsSuccessful(false);
@@ -85,11 +76,6 @@ class CommentValidator implements CommentValidatorInterface
         return $commentValidationResponseTransfer->setIsSuccessful(true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CommentRequestTransfer $commentRequestTransfer
-     *
-     * @return bool
-     */
     protected function isCommentAuthorIntersected(CommentRequestTransfer $commentRequestTransfer): bool
     {
         $commentTransfer = $commentRequestTransfer->getCommentOrFail();
@@ -97,11 +83,6 @@ class CommentValidator implements CommentValidatorInterface
         return $commentTransfer->getCustomer() && $commentTransfer->getCustomerOrFail()->getIdCustomer();
     }
 
-    /**
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\MessageTransfer
-     */
     protected function createMessageTransfer(string $message): MessageTransfer
     {
         return (new MessageTransfer())->setValue($message);

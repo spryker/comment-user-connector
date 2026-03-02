@@ -20,19 +20,11 @@ class UserReader implements UserReaderInterface
      */
     protected CommentUserConnectorToUserFacadeInterface $userFacade;
 
-    /**
-     * @param \Spryker\Zed\CommentUserConnector\Dependency\Facade\CommentUserConnectorToUserFacadeInterface $userFacade
-     */
     public function __construct(CommentUserConnectorToUserFacadeInterface $userFacade)
     {
         $this->userFacade = $userFacade;
     }
 
-    /**
-     * @param int $idUser
-     *
-     * @return \Generated\Shared\Transfer\UserTransfer|null
-     */
     public function findUserById(int $idUser): ?UserTransfer
     {
         $userCollectionTransfer = $this->getUserCollectionByUserIds([$idUser]);

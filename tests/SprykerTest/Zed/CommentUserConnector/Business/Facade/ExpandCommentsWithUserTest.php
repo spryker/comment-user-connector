@@ -30,9 +30,6 @@ class ExpandCommentsWithUserTest extends Unit
      */
     protected CommentUserConnectorBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandsCommentWithUserTransferWhenFkUserIsSet(): void
     {
         // Arrange
@@ -50,9 +47,6 @@ class ExpandCommentsWithUserTest extends Unit
         $this->assertSame($userTransfer->toArray(), $commentTransfers[0]->getUserOrFail()->toArray());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenFkUserIsNotSet(): void
     {
         $this->tester->haveUser();

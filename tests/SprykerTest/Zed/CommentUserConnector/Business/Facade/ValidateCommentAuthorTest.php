@@ -63,9 +63,6 @@ class ValidateCommentAuthorTest extends Unit
      */
     protected CommentUserConnectorBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -75,9 +72,6 @@ class ValidateCommentAuthorTest extends Unit
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorWhenFkUserOfExistingUserIsProvided(): void
     {
         // Arrange
@@ -94,9 +88,6 @@ class ValidateCommentAuthorTest extends Unit
         $this->assertEmpty($commentValidationResponseTransfer->getMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsNoErrorWhenFkUserIsProvidedAndCommentHasIdCommentSet(): void
     {
         // Arrange
@@ -122,9 +113,6 @@ class ValidateCommentAuthorTest extends Unit
         $this->assertEmpty($commentValidationResponseTransfer->getMessages());
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenFkUserOfNonExistingUserIsProvided(): void
     {
         // Arrange
@@ -145,9 +133,6 @@ class ValidateCommentAuthorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenProvidedUserIsNotAnAuthorOfUpdatedComment(): void
     {
         // Arrange
@@ -178,9 +163,6 @@ class ValidateCommentAuthorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsErrorWhenCommentAuthorIntersected(): void
     {
         // Arrange

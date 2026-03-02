@@ -14,12 +14,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractRepository;
  */
 class CommentUserConnectorRepository extends AbstractRepository implements CommentUserConnectorRepositoryInterface
 {
-    /**
-     * @param int $idUser
-     * @param int $idComment
-     *
-     * @return bool
-     */
     public function isUserCommentAuthor(int $idUser, int $idComment): bool
     {
         return $this->getFactory()

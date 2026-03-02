@@ -17,9 +17,6 @@ class CommentExpander implements CommentExpanderInterface
      */
     protected UserReaderInterface $userReader;
 
-    /**
-     * @param \Spryker\Zed\CommentUserConnector\Business\Reader\UserReaderInterface $userReader
-     */
     public function __construct(UserReaderInterface $userReader)
     {
         $this->userReader = $userReader;

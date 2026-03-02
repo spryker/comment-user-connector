@@ -23,17 +23,11 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CommentUserConnectorBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CommentUserConnector\Business\Expander\CommentExpanderInterface
-     */
     public function createCommentExpander(): CommentExpanderInterface
     {
         return new CommentExpander($this->createUserReader());
     }
 
-    /**
-     * @return \Spryker\Zed\CommentUserConnector\Business\Validator\CommentValidatorInterface
-     */
     public function createCommentValidator(): CommentValidatorInterface
     {
         return new CommentValidator(
@@ -42,17 +36,11 @@ class CommentUserConnectorBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CommentUserConnector\Business\Reader\UserReaderInterface
-     */
     public function createUserReader(): UserReaderInterface
     {
         return new UserReader($this->getUserFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\CommentUserConnector\Dependency\Facade\CommentUserConnectorToUserFacadeInterface
-     */
     public function getUserFacade(): CommentUserConnectorToUserFacadeInterface
     {
         return $this->getProvidedDependency(CommentUserConnectorDependencyProvider::FACADE_USER);

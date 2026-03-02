@@ -9,11 +9,5 @@ namespace Spryker\Zed\CommentUserConnector\Persistence;
 
 interface CommentUserConnectorRepositoryInterface
 {
-    /**
-     * @param int $idUser
-     * @param int $idComment
-     *
-     * @return bool
-     */
     public function isUserCommentAuthor(int $idUser, int $idComment): bool;
 }

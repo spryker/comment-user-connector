@@ -17,9 +17,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class CommentUserConnectorPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\Comment\Persistence\SpyCommentQuery
-     */
     public function getCommentQuery(): SpyCommentQuery
     {
         return $this->getProvidedDependency(CommentUserConnectorDependencyProvider::PROPEL_QUERY_COMMENT);

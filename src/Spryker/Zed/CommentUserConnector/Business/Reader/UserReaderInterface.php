@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\UserTransfer;
 
 interface UserReaderInterface
 {
-    /**
-     * @param int $idUser
-     *
-     * @return \Generated\Shared\Transfer\UserTransfer|null
-     */
     public function findUserById(int $idUser): ?UserTransfer;
 
     /**

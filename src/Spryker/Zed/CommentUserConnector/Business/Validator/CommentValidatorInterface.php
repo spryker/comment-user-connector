@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\CommentValidationResponseTransfer;
 
 interface CommentValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CommentRequestTransfer $commentRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CommentValidationResponseTransfer
-     */
     public function validateCommentAuthor(CommentRequestTransfer $commentRequestTransfer): CommentValidationResponseTransfer;
 }
